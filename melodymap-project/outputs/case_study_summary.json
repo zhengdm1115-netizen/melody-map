@@ -1,0 +1,13 @@
+{
+  "n_venues": 3,
+  "n_sensors": 3,
+  "radius_m": 500.0,
+  "n_links_within_radius": 8,
+  "mean_sensors_within_radius_per_venue": 2.6666666666666665,
+  "venues_with_multiple_candidate_sensors": 3,
+  "median_nearest_sensor_distance_m": 203.2285979348585,
+  "sensor_reference_mean_range": [
+    887.0,
+    1277.0
+  ]
+}

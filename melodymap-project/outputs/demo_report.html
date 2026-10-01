@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MelodyMap Melbourne Demo Report</title>
+<style>
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:1100px;margin:36px auto;padding:0 20px;color:#1f2937;line-height:1.6}
+h1,h2{color:#111827} .note{background:#f3f4f6;padding:14px 16px;border-radius:10px} .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+.card{border:1px solid #e5e7eb;border-radius:10px;padding:14px} .big{font-size:1.8rem;font-weight:700} img{max-width:100%;border:1px solid #e5e7eb;border-radius:8px;margin:8px 0 22px}
+table{border-collapse:collapse;width:100%;font-size:.92rem} th,td{padding:8px;border-bottom:1px solid #e5e7eb;text-align:left} @media(max-width:700px){.cards{grid-template-columns:1fr}}
+</style></head><body>
+<h1>MelodyMap Melbourne · 合成数据演示报告</h1>
+<p>这份报告用于验证“音乐空间—夜间人流—消费场景”分析链路。所有数值来自程序生成的合成数据，不代表墨尔本真实情况。</p>
+<div class="cards">
+<div class="card"><div class="big">90</div><div>模拟音乐场所</div></div>
+<div class="card"><div class="big">90%</div><div>500 m 内匹配到客流传感器</div></div>
+<div class="card"><div class="big">3</div><div>空间聚类识别的音乐街区</div></div>
+</div>
+<div class="note">稳健性检查：相对 500 m 基准，300 m 与 700 m 口径的整体排名 Spearman 相关分别为 0.90 和 0.97。这说明演示数据下整体排序没有因小幅改变空间尺度而完全重排。</div>
+<h2>1. 音乐场所与客流传感器</h2><img src="figures/demo/venues_and_sensors.png" alt="music venues and sensors">
+<h2>2. 一天中的人流节奏</h2><img src="figures/demo/hourly_profile.png" alt="hourly profile">
+<h2>3. 音乐密度与夜间人流</h2><img src="figures/demo/music_density_vs_night_footfall.png" alt="density versus footfall">
+<h2>4. 识别出的音乐街区</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>cluster_id</th>
+      <th>venue_count</th>
+      <th>venue_type_count</th>
+      <th>mean_context_score</th>
+      <th>median_night_footfall</th>
+      <th>cafe_seats_median</th>
+      <th>bar_capacity_median</th>
+      <th>centroid_latitude</th>
+      <th>centroid_longitude</th>
+      <th>district_label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>75</td>
+      <td>5</td>
+      <td>56.0</td>
+      <td>281.6</td>
+      <td>1228.0</td>
+      <td>1550.0</td>
+      <td>-37.8</td>
+      <td>145.0</td>
+      <td>Music district 1</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>7</td>
+      <td>2</td>
+      <td>12.8</td>
+      <td>221.9</td>
+      <td>646.0</td>
+      <td>541.0</td>
+      <td>-37.8</td>
+      <td>144.9</td>
+      <td>Music district 3</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>3</td>
+      <td>2</td>
+      <td>21.4</td>
+      <td>279.4</td>
+      <td>416.0</td>
+      <td>877.0</td>
+      <td>-37.8</td>
+      <td>145.0</td>
+      <td>Music district 2</td>
+    </tr>
+  </tbody>
+</table>
+<h2>5. 消费场景得分示例</h2><p>该得分由音乐密度、夜间人流和周边餐饮/酒吧容量的百分位组合而成，仅用于描述和排序，不代表消费金额。</p><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Venue</th>
+      <th>Type</th>
+      <th>Context score</th>
+      <th>Nearby music venues</th>
+      <th>Night footfall</th>
+      <th>Cafe seats</th>
+      <th>Bar capacity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Synthetic Central Venue 29</td>
+      <td>Bar</td>
+      <td>94.0</td>
+      <td>23</td>
+      <td>327.1</td>
+      <td>2083.0</td>
+      <td>2154.0</td>
+    </tr>
+    <tr>
+      <td>Synthetic Central Venue 17</td>
+      <td>Performance space</td>
+      <td>92.2</td>
+      <td>23</td>
+      <td>327.1</td>
+      <td>2016.0</td>
+      <td>1842.0</td>
+    </tr>
+    <tr>
+      <td>Synthetic Central Venue 28</td>
+      <td>Bar</td>
+      <td>91.4</td>
+      <td>23</td>
+      <td>327.1</td>
+      <td>1939.0</td>
+      <td>1823.0</td>
+    </tr>
+    <tr>
+      <td>Synthetic Central Venue 3</td>
+      <td>Performance space</td>
+      <td>91.1</td>
+      <td>18</td>
+      <td>327.1</td>
+      <td>2408.0</td>
+      <td>2614.0</td>
+    </tr>
+    <tr>
+      <td>Synthetic Central Venue 11</td>
+      <td>Theatre</td>
+      <td>90.0</td>
+      <td>18</td>
+      <td>327.1</td>
+      <td>2259.0</td>
+      <td>2323.0</td>
+    </tr>
+    <tr>
+      <td>Synthetic Central Venue 12</td>
+      <td>Nightclub</td>
+      <td>88.7</td>
+      <td>18</td>
+      <td>327.1</td>
+      <td>2259.0</td>
+      <td>2036.0</td>
+    </tr>
+    <tr>
+      <td>Synthetic Central Venue 20</td>
+      <td>Nightclub</td>
+      <td>85.1</td>
+      <td>25</td>
+      <td>325.7</td>
+      <td>1693.0</td>
+      <td>2658.0</td>
+    </tr>
+    <tr>
+      <td>Synthetic Central Venue 21</td>
+      <td>Bar</td>
+      <td>84.5</td>
+      <td>22</td>
+      <td>325.7</td>
+      <td>1850.0</td>
+      <td>2658.0</td>
+    </tr>
+  </tbody>
+</table>
+<h2>解释边界</h2><p>本项目没有真实交易或商户营业额数据，因此不能据此断言音乐场所带来多少消费增长，也不能把空间相关性解释为因果关系。真实数据运行时还应首先报告传感器覆盖率，并仅对覆盖充分的区域展示夜间活力。</p>
+</body></html>

@@ -1,0 +1,4 @@
+location_id,sensor_description,mean_hourly_pedestrians,observation_count,period_note,source
+2,Bourke Street Mall (South),887,131041,"long-run hourly observations reported in published study",Navon et al. / City of Melbourne pedestrian data
+4,Town Hall (West),1277,131275,"long-run hourly observations reported in published study",Navon et al. / City of Melbourne pedestrian data
+6,Flinders Street Station Underpass,1080,130762,"long-run hourly observations reported in published study",Navon et al. / City of Melbourne pedestrian data

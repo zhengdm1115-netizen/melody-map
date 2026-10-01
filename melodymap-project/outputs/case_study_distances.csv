@@ -1,0 +1,10 @@
+venue_name,sensor_description,distance_m,within_radius
+Sticky Institute,Bourke Street Mall (South),451.30792407341426,True
+Sticky Institute,Town Hall (West),324.74704135093157,True
+Sticky Institute,Flinders Street Station Underpass,152.86058997578687,True
+Curtin House,Bourke Street Mall (South),203.2285979348585,True
+Curtin House,Town Hall (West),333.25266986888585,True
+Curtin House,Flinders Street Station Underpass,794.6729372100345,False
+The Sub Club,Bourke Street Mall (South),405.21006511459444,True
+The Sub Club,Town Hall (West),318.72598949612535,True
+The Sub Club,Flinders Street Station Underpass,220.72595063285624,True

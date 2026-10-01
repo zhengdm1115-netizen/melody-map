@@ -1,0 +1,4 @@
+location_id,sensor_description,sensor_name,latitude,longitude,status,source
+2,Bourke Street Mall (South),Bou283_T,-37.81380668,144.96516718,A,City of Melbourne Pedestrian Counting System - Sensor Locations
+4,Town Hall (West),Swa123_T,-37.81487988,144.9660878,A,City of Melbourne Pedestrian Counting System - Sensor Locations
+6,Flinders Street Station Underpass,FliS_T,-37.81911705,144.96558255,A,City of Melbourne Pedestrian Counting System - Sensor Locations

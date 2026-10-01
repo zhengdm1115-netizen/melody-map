@@ -1,0 +1,28 @@
+{
+  "mode": "demo",
+  "year": 2024,
+  "radius_m": 500,
+  "rows": {
+    "venues": 90,
+    "sensors": 28,
+    "pedestrians": 245952,
+    "cafes": 192,
+    "bars": 96
+  },
+  "detected_music_districts": 3,
+  "metrics": {
+    "venue_sensor_coverage_250m": 0.4888888888888889,
+    "venue_sensor_coverage_500m": 0.9,
+    "venue_sensor_coverage_750m": 0.9444444444444444,
+    "median_nearest_sensor_distance_m": 254.02589985120687,
+    "spearman_music_density_vs_night_footfall": 0.5220995527387355,
+    "permutation_p_value": 0.004,
+    "n_sensors": 28,
+    "rank_spearman_300m_vs_500m": 0.8950479075737037,
+    "top10_jaccard_300m_vs_500m": 0.5384615384615384,
+    "rank_spearman_500m_vs_500m": 1.0,
+    "top10_jaccard_500m_vs_500m": 1.0,
+    "rank_spearman_700m_vs_500m": 0.9743669948636057,
+    "top10_jaccard_700m_vs_500m": 0.6666666666666666
+  }
+}
